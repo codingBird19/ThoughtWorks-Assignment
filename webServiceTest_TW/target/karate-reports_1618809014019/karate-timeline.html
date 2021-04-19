@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/reqres_Tests\/user[1:8]","start":1618808696081,"end":1618808699954,"title":"src\/test\/java\/reqres_Tests\/user[1:8] 10:34:56.081-10:34:59.954 create a user","className":"failed"},{"id":2,"group":1,"content":"src\/test\/java\/reqres_Tests\/user[2:26]","start":1618808699971,"end":1618808700485,"title":"src\/test\/java\/reqres_Tests\/user[2:26] 10:34:59.971-10:35:00.485 get all users"},{"id":3,"group":1,"content":"src\/test\/java\/reqres_Tests\/user[3:34]","start":1618808700502,"end":1618808700517,"title":"src\/test\/java\/reqres_Tests\/user[3:34] 10:35:00.502-10:35:00.517 delete user by id","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
